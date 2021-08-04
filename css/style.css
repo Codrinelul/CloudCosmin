@@ -1108,7 +1108,7 @@ label {
 .about-wrapper {
 }
 .about-text {
-  padding-top: 42px;
+  padding-top: auto;
   padding-left: 38px;
 }
 .about-text p {
