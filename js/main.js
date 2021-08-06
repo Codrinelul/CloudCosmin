@@ -1,4 +1,4 @@
-document.getElementById('some').click()
+
 (function ($) {
 "use strict";
 
@@ -117,7 +117,6 @@ new WOW().init();
       }
     }
   });
-  
-  
+
   
 })(jQuery);
