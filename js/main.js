@@ -1,3 +1,4 @@
+document.getElementById('some').click()
 (function ($) {
 "use strict";
 
@@ -10,6 +11,8 @@ $('#mobile-menu').meanmenu({
 
 
  // portfolio active
+
+
 	$('.portfolio-area').imagesLoaded( function() {
 		var grid = $('.grid').isotope({
 			itemSelector: '.grid-item',
@@ -50,7 +53,7 @@ $('#mobile-menu').meanmenu({
 			var filterValue = $(this).attr('data-filter');
 			grid.isotope({ filter: filterValue });
 		});
-
+	
 		//for portfolio menu active class
 		$('.portfolio-menu button').on('click', function (event) {
 			$(this).siblings('.active').removeClass('active');
