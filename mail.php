@@ -11,7 +11,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $message = trim($_POST["message"]);
     
     // Your email where this email will be sent
-    $your_email = "sandu.codrin2002@gmail.com";
+    $your_email = "clodydesigniasi@gmail.com";
     //Your site name for identify 
     $your_site_name = "Clody.design";
     
