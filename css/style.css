@@ -1000,6 +1000,7 @@ label {
 
 /* contact */
 .contact-form {
+  width: auto;
 }
 .contact-title h2 {
   font-size: 20px;
@@ -1022,15 +1023,19 @@ label {
   color: #d1d1d1;
   font-size: 14px;
 }
+
 .contact-form textarea {
   border: 1px solid #d1d1d1;
   height: 120px;
   margin-bottom: 20px;
   padding: 15px;
   width: 100%;
-  color: #d1d1d1;
+  color: #6a6a6a;
   font-size: 14px;
   background: none;
+}
+.Email{
+ margin-bottom: 10px; 
 }
 .contact-form textarea::-moz-placeholder {
   color: #d1d1d1;
@@ -1152,94 +1157,4 @@ label {
 }
 .brand-border {
   border-top: 1px solid #d5d5d5;
-}
-. {
-}
-. {
-}
-. {
-}
-. {
-}
-. {
-}
-. {
-}
-. {
-}
-. {
-}
-. {
-}
-. {
-}
-. {
-}
-. {
-}
-. {
-}
-. {
-}
-. {
-}
-. {
-}
-. {
-}
-. {
-}
-. {
-}
-. {
-}
-. {
-}
-. {
-}
-. {
-}
-. {
-}
-. {
-}
-. {
-}
-. {
-}
-. {
-}
-. {
-}
-. {
-}
-. {
-}
-. {
-}
-. {
-}
-. {
-}
-. {
-}
-. {
-}
-. {
-}
-. {
-}
-. {
-}
-. {
-}
-. {
-}
-. {
-}
-. {
-}
-. {
-}
-. {
 }

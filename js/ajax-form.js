@@ -1,34 +1,50 @@
-(function($) {
-    // Select the form and form message
-    var form = $('#ajax-contact-form'),
-        form_messages = $('#form-messages');
-        
-    // Action at on submit event
-    $(form).on('submit', function(e) {
-        e.preventDefault(); // Stop browser loading
-        
-        // Get form data
-        var form_data = $(form).serialize();
-        
-        // Send Ajax Request
-        var the_request = $.ajax({
-            type: 'POST', // Request Type POST, GET, etc.
-            url: "mail.php",
-            data: form_data
+function sendContact() {
+    var valid;
+    valid = validateContact();
+    if (valid) {
+        jQuery.ajax({
+            url: "contact_mail.php",
+            data: 'userName=' + $("#userName").val() + '&userEmail=' +
+                $("#userEmail").val() + '&subject=' +
+                $("#subject").val() + '&content=' +
+                $(content).val(),
+            type: "POST",
+            success: function (data) {
+                $("#mail-status").html(data);
+            },
+            error: function () { }
         });
-        
-        // At success
-        the_request.done(function(data){
-            form_messages.text("Success: "+data);
-            
-            // Do other things at success
-        });
-        
-        // At error
-        the_request.done(function(){
-            form_messages.text("Error: "+data);
-            
-            // Do other things at fails
-        });
-    });
-})(jQuery);
+    }
+}
+
+function validateContact() {
+    var valid = true;
+    $(".demoInputBox").css('background-color', '');
+    $(".info").html('');
+    if (!$("#userName").val()) {
+        $("#userName-info").html("(required)");
+        $("#userName").css('background-color', '#FFFFDF');
+        valid = false;
+    }
+    if (!$("#userEmail").val()) {
+        $("#userEmail-info").html("(required)");
+        $("#userEmail").css('background-color', '#FFFFDF');
+        valid = false;
+    }
+    if (!$("#userEmail").val().match(/^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/)) {
+        $("#userEmail-info").html("(invalid)");
+        $("#userEmail").css('background-color', '#FFFFDF');
+        valid = false;
+    }
+    if (!$("#subject").val()) {
+        $("#subject-info").html("(required)");
+        $("#subject").css('background-color', '#FFFFDF');
+        valid = false;
+    }
+    if (!$("#content").val()) {
+        $("#content-info").html("(required)");
+        $("#content").css('background-color', '#FFFFDF');
+        valid = false;
+    }
+    return valid;
+}
